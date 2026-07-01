@@ -4,18 +4,16 @@ import domain.Floor;
 import domain.ParkingSlot;
 import domain.PricingRule;
 import domain.Vehicle;
-
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 import repository.FloorRepository;
 import repository.PricingRepository;
 import repository.SlotRepository;
 
 public class AdminService {
-    private FloorRepository floorRepository;
-    private SlotRepository slotRepository;
-    private PricingRepository pricingRepository;
+    private final FloorRepository floorRepository;
+    private final SlotRepository slotRepository;
+    private final PricingRepository pricingRepository;
 
     public AdminService(FloorRepository floorRepository,SlotRepository slotRepository,PricingRepository pricingRepository){
         this.floorRepository=floorRepository;

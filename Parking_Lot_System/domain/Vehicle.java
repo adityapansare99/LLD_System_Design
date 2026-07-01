@@ -3,9 +3,9 @@ package domain;
 import java.util.UUID;
 
 public class Vehicle {
-    private UUID id;
-    private String licensePlate;
-    private VehicleType vehicleType;
+    private final UUID id;
+    private final String licensePlate;
+    private final VehicleType vehicleType;
 
     public enum VehicleType{
         BIKE,CAR,TRUCK,EV

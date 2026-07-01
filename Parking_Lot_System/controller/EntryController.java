@@ -9,8 +9,8 @@ import java.util.UUID;
 
 public class EntryController {
 
-    private TicketService ticketService;
-    private SlotService slotService;
+    private final TicketService ticketService;
+    private final SlotService slotService;
 
     public EntryController(TicketService ticketService, SlotService slotService) {
         this.ticketService = ticketService;
@@ -24,7 +24,7 @@ public class EntryController {
             Vehicle vehicle = new Vehicle(licensePlate, vehicleType);
             System.out.println("[CONTROLLER] Vehicle created: " + vehicle.getId());
 
-            Optional<UUID> slotId = slotService.allocateSlot(vehicleType).map(slot -> slot.getId);
+            Optional<UUID> slotId = slotService.allocateSlot(vehicleType).map(slot -> slot.getId());
 
             if(slotId.isEmpty()){
                 return new EntryResult(false,null,null,"No available slots for vehicle type: " + vehicleType);

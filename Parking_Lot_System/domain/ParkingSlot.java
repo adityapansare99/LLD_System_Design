@@ -4,10 +4,10 @@ import java.util.UUID;
 
 public class ParkingSlot {
 
-    private UUID id;
-    private Vehicle.VehicleType slotType;
+    private final UUID id;
+    private final Vehicle.VehicleType slotType;
     private boolean isOccupied;
-    private int floorNumber;
+    private final int floorNumber;
 
     public ParkingSlot(Vehicle.VehicleType slotType, int floorNumber) {
         this.floorNumber = floorNumber;

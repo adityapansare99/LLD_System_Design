@@ -5,10 +5,10 @@ import java.util.UUID;
 
 public class Receipt {
 
-    private UUID id;
-    private UUID ticketId;
-    private LocalDateTime exitTime;
-    private double totalFee;
+    private final UUID id;
+    private final UUID ticketId;
+    private final LocalDateTime exitTime;
+    private final double totalFee;
     private PaymentStatus paymentStatus;
 
     public enum PaymentStatus {
@@ -20,15 +20,15 @@ public class Receipt {
         this.ticketId = ticketId;
         this.exitTime = LocalDateTime.now();
         this.totalFee = totalFee;
-        this.paymentStatus = paymentStatus.PENDING;
+        this.paymentStatus = PaymentStatus.PENDING;
     }
 
     public void markAsPaid() {
-        this.paymentStatus = paymentStatus.SUCCESS;
+        this.paymentStatus = PaymentStatus.SUCCESS;
     }
 
     public void markAsFailed() {
-        this.paymentStatus = paymentStatus.FAILED;
+        this.paymentStatus = PaymentStatus.FAILED;
     }
 
     public UUID getId() {

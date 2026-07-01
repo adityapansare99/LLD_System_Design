@@ -4,10 +4,10 @@ import java.util.UUID;
 
 public class Payment {
 
-    private UUID id;
-    private UUID ticketId;
-    private double amount;
-    private PaymentGateway gateway;
+    private final UUID id;
+    private final UUID ticketId;
+    private final double amount;
+    private final PaymentGateway gateway;
     private PaymentStatus status;
 
     public enum PaymentGateway {
@@ -48,6 +48,10 @@ public class Payment {
 
     public PaymentStatus getStatus() {
         return status;
+    }
+
+    public UUID getTicketId(){
+        return ticketId;
     }
 
     @Override

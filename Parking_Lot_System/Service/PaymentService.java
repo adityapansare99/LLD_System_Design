@@ -8,7 +8,7 @@ import java.util.UUID;
 import repository.PaymentRepository;
 
 public class PaymentService {
-    private PaymentRepository paymentRepository;
+    private final PaymentRepository paymentRepository;
     private PaymentGatewayAdapter defualtGateway;
 
     public PaymentService(PaymentRepository paymentRepository){
@@ -58,7 +58,7 @@ public class PaymentService {
             }
         }
 
-        System.out.println("[SERVICE] Payment failed after " + maxRetries + " attempts");
+        System.out.println("[SERVICE] Payment failed after " + maxTry + " attempts");
         return false;
     }
 

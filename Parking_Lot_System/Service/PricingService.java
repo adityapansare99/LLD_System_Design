@@ -9,7 +9,7 @@ import java.util.Optional;
 import repository.PricingRepository;
 
 public class PricingService {
-    private PricingRepository pricingRepository;
+    private final PricingRepository pricingRepository;
 
     public PricingService(PricingRepository pricingRepository){
         this.pricingRepository=pricingRepository;

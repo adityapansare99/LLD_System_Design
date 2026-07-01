@@ -7,16 +7,15 @@ import Service.SlotService;
 import Service.TicketService;
 import domain.Receipt;
 import domain.Ticket;
-import java.lang.classfile.ClassFile;
 import java.util.Optional;
 import java.util.UUID;
 
 public class ExitController {
-    private TicketService ticketService;
-    private PricingService pricingService;
-    private PaymentService paymentService;
-    private ReceiptService receiptService;
-    private SlotService slotService;
+    private final  TicketService ticketService;
+    private final PricingService pricingService;
+    private final PaymentService paymentService;
+    private final ReceiptService receiptService;
+    private final SlotService slotService;
 
     public ExitController(TicketService ticketService,PricingService pricingService,PaymentService paymentService,ReceiptService receiptService,SlotService slotService){
         this.paymentService=paymentService;
@@ -45,7 +44,7 @@ public class ExitController {
             double fee=pricingService.calculateFee(ticket);
             System.out.println("[CONTROLLER] Fee calculated: " + fee);
 
-            boolean paymentSuccess=paymentService.processPaymentWithRetry(ticket,fee,3);
+            boolean paymentSuccess=paymentService.processPaymentWithRetry(ticket.getId(),fee,3);
 
             if(!paymentSuccess){
                 return new ExitResult(false, null, fee, "Payment failed");

@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class PricingRule {
 
-    private UUID id;
-    private Vehicle.VehicleType vehicleType;
+    private final UUID id;
+    private final Vehicle.VehicleType vehicleType;
     private double ratePerHour;
     private double flatRate;
 

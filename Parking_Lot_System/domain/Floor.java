@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Floor {
 
-    private UUID id;
-    private int floorNumber;
-    private List<ParkingSlot> slots;
+    private final UUID id;
+    private final int floorNumber;
+    private final List<ParkingSlot> slots;
 
     public Floor(int floorNumber) {
         this.id = UUID.randomUUID();

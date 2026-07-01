@@ -9,8 +9,8 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class FloorRepository {
-    private Map<UUID,Floor> floors=new ConcurrentHashMap<>();
-    private Map<Integer,UUID> floorNumberToId=new ConcurrentHashMap<>();
+    private final Map<UUID,Floor> floors=new ConcurrentHashMap<>();
+    private final Map<Integer,UUID> floorNumberToId=new ConcurrentHashMap<>();
 
     public Floor save(Floor floor){
         floors.put(floor.getId(),floor);
@@ -27,7 +27,7 @@ public class FloorRepository {
         return floorId!=null?Optional.ofNullable(floors.get(floorId)):Optional.empty();
     }
 
-    public List<Floor> findall(){
+    public List<Floor> findAll(){
         return new ArrayList<>(floors.values());
     }
 

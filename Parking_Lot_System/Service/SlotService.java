@@ -8,7 +8,7 @@ import java.util.UUID;
 import repository.SlotRepository;
 
 public class SlotService {
-    private SlotRepository slotRepository;
+    private final SlotRepository slotRepository;
 
     public SlotService(SlotRepository slotRepository){
         this.slotRepository=slotRepository;

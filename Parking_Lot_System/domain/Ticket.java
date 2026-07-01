@@ -5,10 +5,10 @@ import java.util.UUID;
 
 public class Ticket {
 
-    private UUID id;
-    private UUID vehicleId;
-    private UUID slotId;
-    private LocalDateTime entryTime;
+    private final UUID id;
+    private final UUID vehicleId;
+    private final UUID slotId;
+    private final LocalDateTime entryTime;
     private boolean isActive;
 
     public Ticket(UUID vehicleId, UUID slotId) {
